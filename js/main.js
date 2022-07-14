@@ -1,40 +1,40 @@
-// let numeroMayor = 10;
-// for (let i = 1; i <= 5; i++) {
-//     console.log('Ingrese su calificacion',)
-//     const numeroParseado = parseInt (numero);
-//     if (numeroParseado > numeroMayor ) {
-//         numeroMayor = numeroParseado;
-//     }
-// }
+// producto y la cantidad de cuotas. Ambas inicializadas en 0.
+let sumaCuotas = 0;
+let cantidadDeCuotas = 0;
 
-// alert ('El numero mayor es:' + numeroMayor);
-let sumaNotas = 0;
-let cantidadDeNotas = 0;
+// Inicializamos la variable nota donde recibiremos las notas ingresadas por prompt.
+let cuota;
 
-let nota;
-
-
+// Utilizamos do while ya que nos facilita el pedido de la primera entrada.
+// Recordemos que el do while se ejecuta al menos una vez.
 do {
-    const nota = prompt ('Ingrese nota alumno');
-    const notaParseada = parseInt (nota);
-    if (notaParseada >= 1 && notaParseada <= 10){
-        sumaNotas = sumaNotas + notaParseada;
-        cantidadDeNotas++;
-    }
-} while (nota != 'FIN');
+ 
+  cuota = prompt('Ingrese el numero de cuotas con que quiere pagar. Para finalizar de ingresar las cuotas ingrese "FIN"');
+  
+  const cuotaParseada = parseInt(cuota);
+  // Solo tenemos en cuenta las cuota del 1 al 10, ignorando cualquier valor invalido.
+  if (cuotaParseada >= 1 && cuotaParseada <= 10) {
+  
+    sumaCuotas = sumaCuotas + cuotaParseada;
+ 
+    cantidadDeCuotas++;
+  }
+} while (cuota != 'FIN');
 
 
-const promedio = sumaNotas / cantidadDeNotas;
+const promedio = sumacuota / cantidadDeCuotas;
 
 
-let textoAprobado
-if (promedio < 4){
-    textoAprobado = 'desaprobado';
+let textoDescuento;
 
-} else if (promedio >= 9){
-    textoAprobado = 'aprobado con honores';
 
-}else {
-    textoAprobado ='aprobado'
-
+if (promedio < 3) {
+  textoDescuento = 'sin interes';
+} else if (promedio >= 6) {
+  textoDescuento = '10 % de interes';
+} else {
+  textoDescuento = '20 % de interes';
 }
+
+
+alert('El promedio es: ' + promedio + '(' + textoDescuento + ')');
