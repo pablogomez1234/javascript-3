@@ -1,40 +1,29 @@
-// producto y la cantidad de cuotas. Ambas inicializadas en 0.
-let sumaCuotas = 0;
-let cantidadDeCuotas = 0;
-
-// Inicializamos la variable nota donde recibiremos las notas ingresadas por prompt.
-let cuota;
-
-// Utilizamos do while ya que nos facilita el pedido de la primera entrada.
-// Recordemos que el do while se ejecuta al menos una vez.
-do {
- 
-  cuota = prompt('Ingrese el numero de cuotas con que quiere pagar. Para finalizar de ingresar las cuotas ingrese "FIN"');
-  
-  const cuotaParseada = parseInt(cuota);
-  // Solo tenemos en cuenta las cuota del 1 al 10, ignorando cualquier valor invalido.
-  if (cuotaParseada >= 1 && cuotaParseada <= 10) {
-  
-    sumaCuotas = sumaCuotas + cuotaParseada;
- 
-    cantidadDeCuotas++;
-  }
-} while (cuota != 'FIN');
+//pedirle al usuario que ingrese numeros para ver que destino le gusta . si ingres: 1 --> cordoba - ingresa 2: prenda:La rioja - ingresa: 3 --> Buenos Aires. ingrese: 4 --> cierre el programa. 
 
 
-const promedio = sumacuota / cantidadDeCuotas;
+let opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
 
+do{
+    switch(opc){
+        case 1:
+            console.log('elegi Córdoba')
+            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
+            break;
+        case 2: 
+            console.log('elegi La Rioja')
+            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
+            break;
+        case 3: 
+            console.log('elegi Buenos Aires')
+            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
+            break;
+        case 4:
+            console.log('chau')
+            break;
+        default:
+            console.log('Ingresaste CUALQUIER COSA, lee bien!')
+            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
+            break
 
-let textoDescuento;
-
-
-if (promedio < 3) {
-  textoDescuento = 'sin interes';
-} else if (promedio >= 6) {
-  textoDescuento = '10 % de interes';
-} else {
-  textoDescuento = '20 % de interes';
-}
-
-
-alert('El promedio es: ' + promedio + '(' + textoDescuento + ')');
+    }
+}while(opc != 4)
