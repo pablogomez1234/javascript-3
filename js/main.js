@@ -1,29 +1,33 @@
-//pedirle al usuario que ingrese numeros para ver que destino le gusta . si ingres: 1 --> cordoba - ingresa 2: prenda:La rioja - ingresa: 3 --> Buenos Aires. ingrese: 4 --> cierre el programa. 
+// array
+
+function Persona(nombre, apellido, dni, fechaNacimiento){
+    this.nombre = nombre
+    this.apellido = apellido
+    this.dni = dni
+    this.fechaNacimiento = fechaNacimiento
+}
+
+const persona1 = new Persona('Pablo', 'Gomez', '38756940', '05-10-1994')
+const persona2 = new Persona('Ivan', 'Arce', '38867345', '15-03-1994')
+const persona3 = new Persona('Martin', 'Babos', '36098563', '25-07-1994')
+const persona4 = new Persona('Martina', 'Tissera', '33048563', '26-07-1994')
+
+alumnxs.push(persona1)
+alumnxs.push(persona2)
+alumnxs.push(persona3)
+alumnxs.push('Martina')
+alumnxs.push('Marta')
+alumnxs.push(persona4)
+
+console.log(alumnxs)
+console.log('dni: '+ alumnxs[5].dni)
 
 
-let opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
-
-do{
-    switch(opc){
-        case 1:
-            console.log('elegi Córdoba')
-            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
-            break;
-        case 2: 
-            console.log('elegi La Rioja')
-            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
-            break;
-        case 3: 
-            console.log('elegi Buenos Aires')
-            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
-            break;
-        case 4:
-            console.log('chau')
-            break;
-        default:
-            console.log('Ingresaste CUALQUIER COSA, lee bien!')
-            opc = parseInt(prompt('Ingrese 1 para elegir Córdoba \n Ingrese 2 para elegir La Rioja \n Ingrese 3 para elegir Buenos Aires\n Ingrese 4 para apagar el programa\n'))
-            break
-
+let personas = []
+//typeof() - bucle 
+for(let i=0; i < alumnxs.length; i++){
+    console.log(typeof(alumnxs[i]))
+    if(typeof(alumnxs[i]) == 'object' ){
+        personas.push(alumnxs[i])
     }
-}while(opc != 4)
+};
