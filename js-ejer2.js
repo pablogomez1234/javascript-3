@@ -1,14 +1,34 @@
-const listaSuper = [];
+const form = document.getElementById('ingreso-cliente');
 
-let entrada;
-do {
-  entrada = prompt('Ingrese un producto. Ingrese FIN para terminar');
-  if (entrada != 'FIN') {
-    listaSuper.push(entrada);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const formulario = e.target;
+
+  const avenger = {
+    alias: formulario[0].value,
+    nombre: formulario[1].value,
+    edad: parseInt(formulario[2].value)
   }
-} while (entrada != 'FIN');
 
-// Mostramos la cantidad de elementos ingresados.
-alert('La lista tiene ' + listaSuper.length + ' productos.');
-// Mostramos todos los elementos unos abajo de otro.
-alert('La lista tiene:\n' + listaSuper.join('\n'));
+  if (avenger.edad < 18) {
+    const p = document.getElementById('mensaje-error');
+    p.innerText = 'Tienes que ser mayor de 18 años para ingresar';
+    return;
+  }
+
+  const tabla = document.getElementById('tabla');
+  const tr = document.createElement('tr');
+
+  tr.innerHTML = `
+    <td>${cliente.alias}</td>
+    <td>${cliente.nombre}</td>
+    <td>${cliente.edad}</td>
+  `;
+
+  tabla.append(tr);
+
+  document.querySelectorAll('#ingreso-cliente input').forEach((input) => {
+    input.value = '';
+  });
+});
